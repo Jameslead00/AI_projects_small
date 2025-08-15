@@ -39,3 +39,46 @@ This notebook demonstrates a full workflow for building, evaluating, and auditin
 - Applied the trained model to data from four years later to simulate real-world deployment.
 - Re-evaluated performance, calibration, group metrics, and fairness criteria on new data.
 - Exported deployment results for reproducibility and external fairness analysis.
+
+___
+
+# Deep Q-Learning for Moon Landing
+This project implements a Deep Q-Network (DQN) agent to solve the LunarLander-v2 environment from Gymnasium. The agent learns to control a lunar lander and safely land it on the moon using reinforcement learning techniques.
+
+1. Introduction & Objective
+- Explained the goal: train a DQN agent to land a spaceship in the LunarLander-v2 environment.
+
+2. Environment Setup
+- Described the LunarLander-v2 environment, observation and action spaces, and reward structure.
+- Installed required dependencies: gymnasium[box2d], stable-baselines3, and system libraries for video rendering.
+- Set up a virtual display for video recording (for Colab or headless environments).
+
+3. Environment Exploration
+- Created and explored the LunarLander-v2 environment.
+- Printed details of observation and action spaces.
+
+4. Vectorized Environment
+- Created a vectorized environment with 16 parallel instances for diverse experience during training.
+
+5. DQN Implementation
+- Defined the Q-network architecture using PyTorch.
+- Implemented a replay buffer for storing experiences.
+- Built the DQN agent class with epsilon-greedy action selection, learning, target network updates, and epsilon decay.
+
+6. Training Setup
+- Checked for GPU availability and set the device accordingly.
+- Initialized the environment and agent.
+- Set training parameters: number of episodes, max timesteps, etc.
+
+7. Agent Training
+- Trained the DQN agent over 2000 episodes.
+- Stored rewards and decayed epsilon after each episode.
+- Saved the model every 100 episodes.
+
+8. Performance Visualization
+- Plotted the total reward per episode to visualize learning progress.
+- Displayed key hyperparameters below the plot.
+
+9. Agent Evaluation
+- Loaded the trained model and evaluated it on new episodes.
+- Calculated and printed mean and standard deviation of rewards.
